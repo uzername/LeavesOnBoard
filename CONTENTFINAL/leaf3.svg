@@ -7,17 +7,42 @@
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:svg="http://www.w3.org/2000/svg"
    xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="30mm"
-   height="36mm"
-   viewBox="0 0 30 36"
+   width="288"
+   height="338"
+   viewBox="0 0 76.199994 89.429169"
    version="1.1"
    id="svg849"
    inkscape:version="0.92.3 (2405546, 2018-03-11)"
    sodipodi:docname="leaf3.svg">
   <defs
-     id="defs843" />
+     id="defs843">
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient4538">
+      <stop
+         style="stop-color:#467931;stop-opacity:1"
+         offset="0"
+         id="stop4534" />
+      <stop
+         style="stop-color:#3d6731;stop-opacity:1"
+         offset="1"
+         id="stop4536" />
+    </linearGradient>
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient4538"
+       id="radialGradient4540"
+       cx="38.22649"
+       cy="44.687992"
+       fx="38.22649"
+       fy="44.687992"
+       r="38.226489"
+       gradientTransform="matrix(0.68095426,-0.58180159,0.89565161,1.0482917,-31.817746,15.413505)"
+       gradientUnits="userSpaceOnUse" />
+  </defs>
   <sodipodi:namedview
      id="base"
      pagecolor="#ffffff"
@@ -25,9 +50,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.24748737"
-     inkscape:cx="715.25863"
-     inkscape:cy="948.53733"
+     inkscape:zoom="1.979899"
+     inkscape:cx="191.21471"
+     inkscape:cy="159.33681"
      inkscape:document-units="mm"
      inkscape:current-layer="svg849"
      showgrid="false"
@@ -35,7 +60,8 @@
      inkscape:window-height="837"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
-     inkscape:window-maximized="1" />
+     inkscape:window-maximized="1"
+     units="px" />
   <metadata
      id="metadata846">
     <rdf:RDF>
@@ -44,21 +70,24 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
   <path
      id="XMLID_52_"
      class="st1"
-     d="m 23.613797,11.93863 c 7.22313,9.06145 7.30568,18.052 2.30955,22.5769 C 19.466187,38.96953 7.9068081,33.11324 2.8752271,20.7998 0.318293,14.42492 0.212195,7.19016 0,0.37925 8.5431311,1.72254 17.274377,4.75097 23.613797,11.93863 Z"
+     d="M 55.008112,25.954875 C 71.834324,46.342712 72.026623,66.571027 60.388186,76.751839 45.346294,86.773129 18.418833,73.596752 6.6978137,45.892091 0.74146047,31.548911 0.4943062,15.271041 0,-0.0531889 19.901141,2.9691501 40.240495,9.7829761 55.008112,25.954875 Z"
      inkscape:connector-curvature="0"
-     style="fill:#3d6731;stroke-width:0.26458332"
-     inkscape:label="leafmain" />
+     style="fill:url(#radialGradient4540);fill-opacity:1;stroke-width:0.60573077;stroke:#1c6131;stroke-opacity:1"
+     inkscape:label="leafmain"
+     onclick="window.parent.testClick(window);" />
   <path
-     style="fill:#a65425;stroke-width:0.26458332"
-     d="m 2.9219811,12.22212 4.247996,-0.48313 -3.64811,-4.88081 0.489512,-0.41738 4.228747,4.91162 2.1582309,-3.04211 0.80688,0.15212 -2.5962809,3.57863 4.3311309,5.53752 2.82556,-4.83788 0.94855,0.053 -3.14473,5.58535 5.81178,7.12377 3.55772,-5.90928 1.0221,0.0755 -3.86348,6.56951 4.68241,6.52424 -0.88355,0.76775 -4.85289,-6.65809 -8.81224,2.30971 -0.5338859,-0.7047 8.3425759,-2.50413 -5.23398,-6.44013 -5.9998809,1.54008 -0.370509,-0.75368 5.7717899,-1.59262 -4.7474819,-6.35051 -4.318278,0.5168 z"
-     id="XMLID_43_"
+     id="XMLID_25_"
+     class="st1"
+     d="M 63.859202,89.079929 C 60.411632,73.47638 50.091024,53.446181 38.791941,43.405425 32.401915,37.728766 26.71521,32.83676 20.582684,26.882625 15.594519,22.043085 9.9325345,14.627695 6.8841009,10.538687 c 4.2093421,4.297729 9.6861761,10.795928 14.7784201,15.39275 6.469232,5.835173 12.197093,10.309667 18.641654,16.169711 11.838852,10.749128 23.069494,31.414688 27.116557,46.171223 -1.188807,0.267489 -2.372724,0.54007 -3.56153,0.807558 z"
      inkscape:connector-curvature="0"
-     sodipodi:nodetypes="ccccccccccccccccccccccccccccc" />
+     style="fill:#8bbc4d;fill-opacity:1;stroke:#8bbc4d;stroke-width:0.79374999;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     sodipodi:nodetypes="cccccccc"
+     inkscape:label="leafstem" />
 </svg>
