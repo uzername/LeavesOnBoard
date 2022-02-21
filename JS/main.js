@@ -1,6 +1,7 @@
 var divID_main = "board";
 var restartQuery="RESTART NOW?";
-function initMain() {
+var timeStart; var timeEnd;
+function initMain() {  
     mainHTMLElementBoard = document.getElementById(divID_main);
     var drawCanvasWidth = parseFloat(getComputedStyle(mainHTMLElementBoard, null).width.replace("px", ""));
     var drawCanvasHeight = parseFloat(getComputedStyle(mainHTMLElementBoard, null).height.replace("px", ""));    
@@ -15,8 +16,14 @@ function initMain() {
        var rotationDegrees = getRandomIntBetween(1,359);
        addLeafRandomly(XCoord, YCoord, wdthLeaf, hghtLeaf, mainHTMLElementBoard,i,kindOfLeaf,rotationDegrees);
     }
+    timeStart = Date.now();
 }
-
+// ===== USEFUL ROUTINES =====
+if (!Date.now) {
+  Date.now = function now() {
+    return new Date().getTime();
+  };
+}
 function getRandomInt(max) {
     return Math.floor(Math.random() * max);
   }
@@ -29,6 +36,16 @@ function setWidth(el, val) {
     if (typeof val === "string") el.style.width = val;
     else el.style.width = val + "px";
 }
+// convert ms value to hours, minutes, seconds
+// https://stackoverflow.com/questions/21294302/converting-milliseconds-to-minutes-and-seconds-with-javascript
+function getTimeDifference(ms) {
+  var d = new Date(1000*Math.round(ms/1000)); // round to nearest second
+  function pad(i) { return ('0'+i).slice(-2); }
+  var str = d.getUTCHours() + ':' + pad(d.getUTCMinutes()) + ':' + pad(d.getUTCSeconds());
+  return str;
+}
+// =========================
+
 /// Add leaf randomly
 /// xPosition, yPosition - left and right offset of upper left point, assuming position:absolute. Integer.
 /// inWdth, inHght - width and height, for transformation
@@ -62,13 +79,17 @@ function testClick(whatCatched) {
        var drawCanvasHeight = parseFloat(getComputedStyle(mainHTMLElementBoard, null).height.replace("px", "")); 
        var yPosition = drawCanvasHeight/2;
        restartDivElement.setAttribute("style","position: absolute; top: "+yPosition.toString()+"px; left:"+"0"+"px; width:100%");
-       restartDivElement.innerHTML="<div id=\"restart-main-btn\" onclick=\"restartMain()\">"+restartQuery+"</div>";
+       timeEnd = Date.now();
+       var timetime= getTimeDifference(timeEnd-timeStart);
+       restartDivElement.innerHTML+="<div class=\"restart-main-text\" style=\"color:darkgreen\">You managed to clean up all the leaves </div>";
+       restartDivElement.innerHTML+="<div class=\"restart-main-text\" style=\"color:darkred\">"+timetime+"</div>";
+       restartDivElement.innerHTML+="<div id=\"restart-main-btn\" onclick=\"restartMain()\">"+restartQuery+"</div>";
        mainHTMLElementBoard.appendChild(restartDivElement);
     }
 }
 
 function restartMain() {
-    // div with ID restart-main must exist!
+    // div with ID restart-main must exist! Need to add check
     document.getElementById("restart-main").remove();
     initMain();
 }
