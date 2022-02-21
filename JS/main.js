@@ -1,9 +1,10 @@
-var divID_main = "board"
+var divID_main = "board";
+var restartQuery="RESTART NOW?";
 function initMain() {
     mainHTMLElementBoard = document.getElementById(divID_main);
     var drawCanvasWidth = parseFloat(getComputedStyle(mainHTMLElementBoard, null).width.replace("px", ""));
     var drawCanvasHeight = parseFloat(getComputedStyle(mainHTMLElementBoard, null).height.replace("px", ""));    
-    var leafCount = getRandomIntBetween(20,200);
+    var leafCount = getRandomIntBetween(100,250);
     //leafCount = 0;
     for(var i=0; i<leafCount; i++) {
        var kindOfLeaf = getRandomIntBetween(1,5);
@@ -51,6 +52,23 @@ function addLeafRandomly(xPosition, yPosition, inWdth, inHght, elementToAdd, ind
 
 function testClick(whatCatched) {
     // assume that whatCatched is a Window
+    var theGraalID =whatCatched.frameElement.id;
+    //console.log(theGraalID);
+    document.getElementById(theGraalID).remove();    
+    if (mainHTMLElementBoard.children.length == 0) { // nothing left, ask for restart
+       var restartDivElement = document.createElement("div");
+       restartDivElement.id = 'restart-main';
+       mainHTMLElementBoard = document.getElementById(divID_main);
+       var drawCanvasHeight = parseFloat(getComputedStyle(mainHTMLElementBoard, null).height.replace("px", "")); 
+       var yPosition = drawCanvasHeight/2;
+       restartDivElement.setAttribute("style","position: absolute; top: "+yPosition.toString()+"px; left:"+"0"+"px; width:100%");
+       restartDivElement.innerHTML="<div id=\"restart-main-btn\" onclick=\"restartMain()\">"+restartQuery+"</div>";
+       mainHTMLElementBoard.appendChild(restartDivElement);
+    }
+}
 
-    console.log(whatCatched.frameElement.id);
+function restartMain() {
+    // div with ID restart-main must exist!
+    document.getElementById("restart-main").remove();
+    initMain();
 }
