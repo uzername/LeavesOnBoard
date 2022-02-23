@@ -7,8 +7,9 @@ function initMain() {
     var drawCanvasHeight = parseFloat(getComputedStyle(mainHTMLElementBoard, null).height.replace("px", ""));    
     var leafCount = getRandomIntBetween(100,250);
     //leafCount = 0;
+    console.log(leafCount);
     for(var i=0; i<leafCount; i++) {
-       var kindOfLeaf = getRandomIntBetween(1,5);
+       var kindOfLeaf = getRandomIntBetween(1,6);
        var wdthLeaf = getRandomIntBetween(50,100);
        var hghtLeaf = wdthLeaf;
        var XCoord = getRandomIntBetween(0, drawCanvasWidth-wdthLeaf);
